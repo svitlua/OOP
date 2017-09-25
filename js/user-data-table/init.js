@@ -3,11 +3,12 @@
 	var userDataTable = null;
 
 	function init() {
+	$( "#addPersonBtn" ).click(function() {
+		if (userDataTable === null){
 		var mainCnt = $('#main_cnt');
 		userDataTable = new Table();
 		mainCnt.append(userDataTable.render());
-
-	$( "#addPersonBtn" ).click(function() {
+		}
 		var name = $('#name').val();
 		var sex = $('#sex').val();
 		var birth_date = $('#birth_date').val();
@@ -20,24 +21,6 @@
 		userDataTable.addChild(user);
 		console.log(userDataTable);
 		});
-
-
-		// var enter_num = prompt("Enter number of people", 5);
-		// var num = parseInt(enter_num);
-		// if (num>0)
-		// 	{
-		// 		var mainCnt = $('#main_cnt');
-		// 		userDataForm = new Table();
-		// 		mainCnt.append(userDataForm.render());
-		// 		_.each(new Array(num).fill(), function(value, index) {
-		// 				userDataForm.addChild();
-		// 		});
-		// }
-		// else{
-		// 	alert("Enter correct number!");
-		// 	init();
-		// }
-
 	};
 
 	init();
